@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2e2f81d1-d931-4f53-8890-06cccda74be9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55597/ComplexCalculator.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ComplexCalculator.wsdl" MetadataType="Wsdl" ID="55aa1cdc-42ca-4bd6-86bb-cf24b2d6be1f" SourceId="1" SourceUrl="http://localhost:55597/ComplexCalculator.svc?wsdl" />
+    <MetadataFile FileName="ComplexCalculator.disco" MetadataType="Disco" ID="addc526e-7769-4878-8e78-345fab31d5aa" SourceId="1" SourceUrl="http://localhost:55597/ComplexCalculator.svc?disco" />
+    <MetadataFile FileName="ComplexCalculator.xsd" MetadataType="Schema" ID="4e9eb5cd-c957-4aa7-8c73-b9062862d784" SourceId="1" SourceUrl="http://localhost:55597/ComplexCalculator.svc?xsd=xsd0" />
+    <MetadataFile FileName="ComplexCalculator1.xsd" MetadataType="Schema" ID="a440f508-8dcf-4b99-a4bc-624739eff00d" SourceId="1" SourceUrl="http://localhost:55597/ComplexCalculator.svc?xsd=xsd2" />
+    <MetadataFile FileName="ComplexCalculator2.xsd" MetadataType="Schema" ID="be5c8c52-b343-4798-8739-6556f9adc0c6" SourceId="1" SourceUrl="http://localhost:55597/ComplexCalculator.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lab2WpfClient.ServiceReference1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,30 @@ namespace Lab2WpfClient
         {
             InitializeComponent();
         }
+
+        private void BAdd_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BMul_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BSub_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void BDiv_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void BCls_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 }

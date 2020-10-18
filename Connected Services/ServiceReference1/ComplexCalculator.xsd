@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:55597/ComplexCalculator.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Lab1Wcf" />
+  <xs:element name="AddComplexData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Lab1Wcf" minOccurs="0" name="a" nillable="true" type="q1:Complex" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Lab1Wcf" minOccurs="0" name="b" nillable="true" type="q2:Complex" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddComplexDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Lab1Wcf" minOccurs="0" name="AddComplexDataResult" nillable="true" type="q3:Complex" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddDoubleData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ar" type="xs:double" />
+        <xs:element minOccurs="0" name="ai" type="xs:double" />
+        <xs:element minOccurs="0" name="br" type="xs:double" />
+        <xs:element minOccurs="0" name="bi" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddDoubleDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Lab1Wcf" minOccurs="0" name="AddDoubleDataResult" nillable="true" type="q4:Complex" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubstractComplexData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Lab1Wcf" minOccurs="0" name="a" nillable="true" type="q5:Complex" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Lab1Wcf" minOccurs="0" name="b" nillable="true" type="q6:Complex" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubstractComplexDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Lab1Wcf" minOccurs="0" name="SubstractComplexDataResult" nillable="true" type="q7:Complex" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubstractDoubleData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ar" type="xs:double" />
+        <xs:element minOccurs="0" name="ai" type="xs:double" />
+        <xs:element minOccurs="0" name="br" type="xs:double" />
+        <xs:element minOccurs="0" name="bi" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubstractDoubleDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Lab1Wcf" minOccurs="0" name="SubstractDoubleDataResult" nillable="true" type="q8:Complex" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DivideComplexData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Lab1Wcf" minOccurs="0" name="a" nillable="true" type="q9:Complex" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Lab1Wcf" minOccurs="0" name="b" nillable="true" type="q10:Complex" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DivideComplexDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Lab1Wcf" minOccurs="0" name="DivideComplexDataResult" nillable="true" type="q11:Complex" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DivideDoubleData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ar" type="xs:double" />
+        <xs:element minOccurs="0" name="ai" type="xs:double" />
+        <xs:element minOccurs="0" name="br" type="xs:double" />
+        <xs:element minOccurs="0" name="bi" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DivideDoubleDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Lab1Wcf" minOccurs="0" name="DivideDoubleDataResult" nillable="true" type="q12:Complex" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MultiplyComplexData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Lab1Wcf" minOccurs="0" name="a" nillable="true" type="q13:Complex" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Lab1Wcf" minOccurs="0" name="b" nillable="true" type="q14:Complex" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MultiplyComplexDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Lab1Wcf" minOccurs="0" name="MultiplyComplexDataResult" nillable="true" type="q15:Complex" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MultiplyDoubleData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ar" type="xs:double" />
+        <xs:element minOccurs="0" name="ai" type="xs:double" />
+        <xs:element minOccurs="0" name="br" type="xs:double" />
+        <xs:element minOccurs="0" name="bi" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MultiplyDoubleDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Lab1Wcf" minOccurs="0" name="MultiplyDoubleDataResult" nillable="true" type="q16:Complex" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

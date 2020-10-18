@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ComplexCalculator" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:55597/ComplexCalculator.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:55597/ComplexCalculator.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:55597/ComplexCalculator.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Lab1Wcf" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IComplexCalculator_AddComplexData_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddComplexData" />
+  </wsdl:message>
+  <wsdl:message name="IComplexCalculator_AddComplexData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddComplexDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplexCalculator_AddDoubleData_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDoubleData" />
+  </wsdl:message>
+  <wsdl:message name="IComplexCalculator_AddDoubleData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDoubleDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplexCalculator_SubstractComplexData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubstractComplexData" />
+  </wsdl:message>
+  <wsdl:message name="IComplexCalculator_SubstractComplexData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubstractComplexDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplexCalculator_SubstractDoubleData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubstractDoubleData" />
+  </wsdl:message>
+  <wsdl:message name="IComplexCalculator_SubstractDoubleData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubstractDoubleDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplexCalculator_DivideComplexData_InputMessage">
+    <wsdl:part name="parameters" element="tns:DivideComplexData" />
+  </wsdl:message>
+  <wsdl:message name="IComplexCalculator_DivideComplexData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DivideComplexDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplexCalculator_DivideDoubleData_InputMessage">
+    <wsdl:part name="parameters" element="tns:DivideDoubleData" />
+  </wsdl:message>
+  <wsdl:message name="IComplexCalculator_DivideDoubleData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DivideDoubleDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplexCalculator_MultiplyComplexData_InputMessage">
+    <wsdl:part name="parameters" element="tns:MultiplyComplexData" />
+  </wsdl:message>
+  <wsdl:message name="IComplexCalculator_MultiplyComplexData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MultiplyComplexDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplexCalculator_MultiplyDoubleData_InputMessage">
+    <wsdl:part name="parameters" element="tns:MultiplyDoubleData" />
+  </wsdl:message>
+  <wsdl:message name="IComplexCalculator_MultiplyDoubleData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MultiplyDoubleDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IComplexCalculator">
+    <wsdl:operation name="AddComplexData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplexCalculator/AddComplexData" message="tns:IComplexCalculator_AddComplexData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplexCalculator/AddComplexDataResponse" message="tns:IComplexCalculator_AddComplexData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDoubleData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplexCalculator/AddDoubleData" message="tns:IComplexCalculator_AddDoubleData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplexCalculator/AddDoubleDataResponse" message="tns:IComplexCalculator_AddDoubleData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubstractComplexData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplexCalculator/SubstractComplexData" message="tns:IComplexCalculator_SubstractComplexData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplexCalculator/SubstractComplexDataResponse" message="tns:IComplexCalculator_SubstractComplexData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubstractDoubleData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplexCalculator/SubstractDoubleData" message="tns:IComplexCalculator_SubstractDoubleData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplexCalculator/SubstractDoubleDataResponse" message="tns:IComplexCalculator_SubstractDoubleData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DivideComplexData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplexCalculator/DivideComplexData" message="tns:IComplexCalculator_DivideComplexData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplexCalculator/DivideComplexDataResponse" message="tns:IComplexCalculator_DivideComplexData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DivideDoubleData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplexCalculator/DivideDoubleData" message="tns:IComplexCalculator_DivideDoubleData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplexCalculator/DivideDoubleDataResponse" message="tns:IComplexCalculator_DivideDoubleData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MultiplyComplexData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplexCalculator/MultiplyComplexData" message="tns:IComplexCalculator_MultiplyComplexData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplexCalculator/MultiplyComplexDataResponse" message="tns:IComplexCalculator_MultiplyComplexData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MultiplyDoubleData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IComplexCalculator/MultiplyDoubleData" message="tns:IComplexCalculator_MultiplyDoubleData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IComplexCalculator/MultiplyDoubleDataResponse" message="tns:IComplexCalculator_MultiplyDoubleData_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IComplexCalculator" type="tns:IComplexCalculator">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddComplexData">
+      <soap:operation soapAction="http://tempuri.org/IComplexCalculator/AddComplexData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDoubleData">
+      <soap:operation soapAction="http://tempuri.org/IComplexCalculator/AddDoubleData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubstractComplexData">
+      <soap:operation soapAction="http://tempuri.org/IComplexCalculator/SubstractComplexData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubstractDoubleData">
+      <soap:operation soapAction="http://tempuri.org/IComplexCalculator/SubstractDoubleData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DivideComplexData">
+      <soap:operation soapAction="http://tempuri.org/IComplexCalculator/DivideComplexData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DivideDoubleData">
+      <soap:operation soapAction="http://tempuri.org/IComplexCalculator/DivideDoubleData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MultiplyComplexData">
+      <soap:operation soapAction="http://tempuri.org/IComplexCalculator/MultiplyComplexData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MultiplyDoubleData">
+      <soap:operation soapAction="http://tempuri.org/IComplexCalculator/MultiplyDoubleData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ComplexCalculator">
+    <wsdl:port name="BasicHttpBinding_IComplexCalculator" binding="tns:BasicHttpBinding_IComplexCalculator">
+      <soap:address location="http://localhost:55597/ComplexCalculator.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
