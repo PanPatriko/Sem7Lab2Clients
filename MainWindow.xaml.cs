@@ -36,32 +36,39 @@ namespace Lab2WpfClient
         {
             if(ParseTextBoxes())
             {
-                if(CbComplex.IsChecked??false)
+                try
                 {
-                    Complex a = new Complex();
-                    Complex b = new Complex();
-                    a.Real = ar;
-                    a.Imag = ai;
-                    b.Real = br;
-                    b.Imag = bi;
-                    complex = Calculator.AddComplexData(a,b);
-                    if(CbAsync.IsChecked??false)
+                    if (CbComplex.IsChecked ?? false)
                     {
-                        complex = Calculator.AddComplexDataAsync(a, b).Result;
-                    }
-                }
-                else
-                {
-                    if (CbAsync.IsChecked ?? false)
-                    {
-                        complex = Calculator.AddDoubleDataAsync(ar, ai, br, bi).Result;
+                        Complex a = new Complex();
+                        Complex b = new Complex();
+                        a.Real = ar;
+                        a.Imag = ai;
+                        b.Real = br;
+                        b.Imag = bi;
+                        complex = Calculator.AddComplexData(a, b);
+                        if (CbAsync.IsChecked ?? false)
+                        {
+                            complex = Calculator.AddComplexDataAsync(a, b).Result;
+                        }
                     }
                     else
                     {
-                        complex = Calculator.AddDoubleData(ar, ai, br, bi);
+                        if (CbAsync.IsChecked ?? false)
+                        {
+                            complex = Calculator.AddDoubleDataAsync(ar, ai, br, bi).Result;
+                        }
+                        else
+                        {
+                            complex = Calculator.AddDoubleData(ar, ai, br, bi);
+                        }
                     }
+                    TbResult.Text = ComplexToString(complex);
                 }
-                TbResult.Text = ComplexToString(complex);
+                catch (System.ServiceModel.EndpointNotFoundException)
+                {
+                    MessageBox.Show("Serwis jest obecnie niedostępny");
+                }
             }       
         }
 
@@ -69,96 +76,117 @@ namespace Lab2WpfClient
         {
             if (ParseTextBoxes())
             {
-                if (CbComplex.IsChecked ?? false)
+                try
                 {
-                    Complex a = new Complex();
-                    Complex b = new Complex();
-                    a.Real = ar;
-                    a.Imag = ai;
-                    b.Real = br;
-                    b.Imag = bi;
-                    complex = Calculator.MultiplyComplexData(a, b);
-                    if (CbAsync.IsChecked ?? false)
+                    if (CbComplex.IsChecked ?? false)
                     {
-                        complex = Calculator.MultiplyComplexDataAsync(a, b).Result;
-                    }
-                }
-                else
-                {
-                    if (CbAsync.IsChecked ?? false)
-                    {
-                        complex = Calculator.MultiplyDoubleDataAsync(ar, ai, br, bi).Result;
+                        Complex a = new Complex();
+                        Complex b = new Complex();
+                        a.Real = ar;
+                        a.Imag = ai;
+                        b.Real = br;
+                        b.Imag = bi;
+                        complex = Calculator.MultiplyComplexData(a, b);
+                        if (CbAsync.IsChecked ?? false)
+                        {
+                            complex = Calculator.MultiplyComplexDataAsync(a, b).Result;
+                        }
                     }
                     else
                     {
-                        complex = Calculator.MultiplyDoubleData(ar, ai, br, bi);
+                        if (CbAsync.IsChecked ?? false)
+                        {
+                            complex = Calculator.MultiplyDoubleDataAsync(ar, ai, br, bi).Result;
+                        }
+                        else
+                        {
+                            complex = Calculator.MultiplyDoubleData(ar, ai, br, bi);
+                        }
                     }
+                    TbResult.Text = ComplexToString(complex);
                 }
-                TbResult.Text = ComplexToString(complex);
+                catch (System.ServiceModel.EndpointNotFoundException)
+                {
+                    MessageBox.Show("Serwis jest obecnie niedostępny");
+                }
             }
         }
         private void BSub_Click(object sender, RoutedEventArgs e)
         {
             if (ParseTextBoxes())
             {
-                if (CbComplex.IsChecked ?? false)
+                try
                 {
-                    Complex a = new Complex();
-                    Complex b = new Complex();
-                    a.Real = ar;
-                    a.Imag = ai;
-                    b.Real = br;
-                    b.Imag = bi;
-                    complex = Calculator.SubstractComplexData(a, b);
-                    if (CbAsync.IsChecked ?? false)
+                    if (CbComplex.IsChecked ?? false)
                     {
-                        complex = Calculator.SubstractComplexDataAsync(a, b).Result;
-                    }
-                }
-                else
-                {
-                    if (CbAsync.IsChecked ?? false)
-                    {
-                        complex = Calculator.SubstractDoubleDataAsync(ar, ai, br, bi).Result;
+                        Complex a = new Complex();
+                        Complex b = new Complex();
+                        a.Real = ar;
+                        a.Imag = ai;
+                        b.Real = br;
+                        b.Imag = bi;
+                        complex = Calculator.SubstractComplexData(a, b);
+                        if (CbAsync.IsChecked ?? false)
+                        {
+                            complex = Calculator.SubstractComplexDataAsync(a, b).Result;
+                        }
                     }
                     else
                     {
-                        complex = Calculator.SubstractDoubleData(ar, ai, br, bi);
+                        if (CbAsync.IsChecked ?? false)
+                        {
+                            complex = Calculator.SubstractDoubleDataAsync(ar, ai, br, bi).Result;
+                        }
+                        else
+                        {
+                            complex = Calculator.SubstractDoubleData(ar, ai, br, bi);
+                        }
                     }
+                    TbResult.Text = ComplexToString(complex);
                 }
-                TbResult.Text = ComplexToString(complex);
+                catch (System.ServiceModel.EndpointNotFoundException)
+                {
+                    MessageBox.Show("Serwis jest obecnie niedostępny");
+                }
             }
         }
         private void BDiv_Click(object sender, RoutedEventArgs e)
         {
             if (ParseTextBoxes())
             {
-                if (CbComplex.IsChecked ?? false)
+                try
                 {
-                    Complex a = new Complex();
-                    Complex b = new Complex();
-                    a.Real = ar;
-                    a.Imag = ai;
-                    b.Real = br;
-                    b.Imag = bi;
-                    complex = Calculator.DivideComplexData(a, b);
-                    if (CbAsync.IsChecked ?? false)
+                    if (CbComplex.IsChecked ?? false)
                     {
-                        complex = Calculator.DivideComplexDataAsync(a, b).Result;
-                    }
-                }
-                else
-                {
-                    if (CbAsync.IsChecked ?? false)
-                    {
-                        complex = Calculator.DivideDoubleDataAsync(ar, ai, br, bi).Result;
+                        Complex a = new Complex();
+                        Complex b = new Complex();
+                        a.Real = ar;
+                        a.Imag = ai;
+                        b.Real = br;
+                        b.Imag = bi;
+                        complex = Calculator.DivideComplexData(a, b);
+                        if (CbAsync.IsChecked ?? false)
+                        {
+                            complex = Calculator.DivideComplexDataAsync(a, b).Result;
+                        }
                     }
                     else
                     {
-                        complex = Calculator.DivideDoubleData(ar, ai, br, bi);
+                        if (CbAsync.IsChecked ?? false)
+                        {
+                            complex = Calculator.DivideDoubleDataAsync(ar, ai, br, bi).Result;
+                        }
+                        else
+                        {
+                            complex = Calculator.DivideDoubleData(ar, ai, br, bi);
+                        }
                     }
+                    TbResult.Text = ComplexToString(complex);
                 }
-                TbResult.Text = ComplexToString(complex);
+                catch (System.ServiceModel.EndpointNotFoundException)
+                {
+                    MessageBox.Show("Serwis jest obecnie niedostępny");
+                }
             }
         }
         private void BCls_Click(object sender, RoutedEventArgs e)
