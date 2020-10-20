@@ -32,7 +32,7 @@ namespace Lab2WpfClient
         Complex complex;
         double ar, ai, br, bi;
 
-        private void BAdd_Click(object sender, RoutedEventArgs e)
+        private async void BAdd_Click(object sender, RoutedEventArgs e)
         {
             if(ParseTextBoxes())
             {
@@ -46,17 +46,20 @@ namespace Lab2WpfClient
                         a.Imag = ai;
                         b.Real = br;
                         b.Imag = bi;
-                        complex = Calculator.AddComplexData(a, b);
                         if (CbAsync.IsChecked ?? false)
                         {
-                            complex = Calculator.AddComplexDataAsync(a, b).Result;
+                            complex = await Calculator.AddComplexDataAsync(a, b);
+                        }
+                        else
+                        {
+                            complex = Calculator.AddComplexData(a, b);
                         }
                     }
                     else
                     {
                         if (CbAsync.IsChecked ?? false)
                         {
-                            complex = Calculator.AddDoubleDataAsync(ar, ai, br, bi).Result;
+                            complex =  await Calculator.AddDoubleDataAsync(ar, ai, br, bi);
                         }
                         else
                         {
@@ -72,7 +75,7 @@ namespace Lab2WpfClient
             }       
         }
 
-        private void BMul_Click(object sender, RoutedEventArgs e)
+        private async void BMul_Click(object sender, RoutedEventArgs e)
         {
             if (ParseTextBoxes())
             {
@@ -86,17 +89,20 @@ namespace Lab2WpfClient
                         a.Imag = ai;
                         b.Real = br;
                         b.Imag = bi;
-                        complex = Calculator.MultiplyComplexData(a, b);
                         if (CbAsync.IsChecked ?? false)
                         {
-                            complex = Calculator.MultiplyComplexDataAsync(a, b).Result;
+                            complex = await Calculator.MultiplyComplexDataAsync(a, b);
+                        }
+                        else
+                        {
+                            complex = Calculator.MultiplyComplexData(a, b);
                         }
                     }
                     else
                     {
                         if (CbAsync.IsChecked ?? false)
                         {
-                            complex = Calculator.MultiplyDoubleDataAsync(ar, ai, br, bi).Result;
+                            complex = await Calculator.MultiplyDoubleDataAsync(ar, ai, br, bi);
                         }
                         else
                         {
@@ -111,7 +117,7 @@ namespace Lab2WpfClient
                 }
             }
         }
-        private void BSub_Click(object sender, RoutedEventArgs e)
+        private async void BSub_Click(object sender, RoutedEventArgs e)
         {
             if (ParseTextBoxes())
             {
@@ -125,17 +131,20 @@ namespace Lab2WpfClient
                         a.Imag = ai;
                         b.Real = br;
                         b.Imag = bi;
-                        complex = Calculator.SubstractComplexData(a, b);
                         if (CbAsync.IsChecked ?? false)
                         {
-                            complex = Calculator.SubstractComplexDataAsync(a, b).Result;
+                            complex = await Calculator.SubstractComplexDataAsync(a, b);
+                        }
+                        else
+                        {
+                            complex = Calculator.SubstractComplexData(a, b);
                         }
                     }
                     else
                     {
                         if (CbAsync.IsChecked ?? false)
                         {
-                            complex = Calculator.SubstractDoubleDataAsync(ar, ai, br, bi).Result;
+                            complex = await Calculator.SubstractDoubleDataAsync(ar, ai, br, bi);
                         }
                         else
                         {
@@ -150,7 +159,7 @@ namespace Lab2WpfClient
                 }
             }
         }
-        private void BDiv_Click(object sender, RoutedEventArgs e)
+        private async void BDiv_Click(object sender, RoutedEventArgs e)
         {
             if (ParseTextBoxes())
             {
@@ -164,17 +173,20 @@ namespace Lab2WpfClient
                         a.Imag = ai;
                         b.Real = br;
                         b.Imag = bi;
-                        complex = Calculator.DivideComplexData(a, b);
                         if (CbAsync.IsChecked ?? false)
                         {
-                            complex = Calculator.DivideComplexDataAsync(a, b).Result;
+                            complex = await Calculator.DivideComplexDataAsync(a, b);
+                        }
+                        else
+                        {
+                            complex = Calculator.DivideComplexData(a, b);
                         }
                     }
                     else
                     {
                         if (CbAsync.IsChecked ?? false)
                         {
-                            complex = Calculator.DivideDoubleDataAsync(ar, ai, br, bi).Result;
+                            complex = await Calculator.DivideDoubleDataAsync(ar, ai, br, bi);
                         }
                         else
                         {
