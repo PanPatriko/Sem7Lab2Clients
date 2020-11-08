@@ -37,11 +37,17 @@
   <wsdl:message name="IComplexCalculator_DivideComplexData_OutputMessage">
     <wsdl:part name="parameters" element="tns:DivideComplexDataResponse" />
   </wsdl:message>
+  <wsdl:message name="IComplexCalculator_DivideComplexData_DivideByZeroExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Lab1Wcf" name="detail" element="q1:DivideByZeroException" />
+  </wsdl:message>
   <wsdl:message name="IComplexCalculator_DivideDoubleData_InputMessage">
     <wsdl:part name="parameters" element="tns:DivideDoubleData" />
   </wsdl:message>
   <wsdl:message name="IComplexCalculator_DivideDoubleData_OutputMessage">
     <wsdl:part name="parameters" element="tns:DivideDoubleDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IComplexCalculator_DivideDoubleData_DivideByZeroExceptionFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Lab1Wcf" name="detail" element="q2:DivideByZeroException" />
   </wsdl:message>
   <wsdl:message name="IComplexCalculator_MultiplyComplexData_InputMessage">
     <wsdl:part name="parameters" element="tns:MultiplyComplexData" />
@@ -75,10 +81,12 @@
     <wsdl:operation name="DivideComplexData">
       <wsdl:input wsaw:Action="http://tempuri.org/IComplexCalculator/DivideComplexData" message="tns:IComplexCalculator_DivideComplexData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IComplexCalculator/DivideComplexDataResponse" message="tns:IComplexCalculator_DivideComplexData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IComplexCalculator/DivideComplexDataDivideByZeroExceptionFault" name="DivideByZeroExceptionFault" message="tns:IComplexCalculator_DivideComplexData_DivideByZeroExceptionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="DivideDoubleData">
       <wsdl:input wsaw:Action="http://tempuri.org/IComplexCalculator/DivideDoubleData" message="tns:IComplexCalculator_DivideDoubleData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IComplexCalculator/DivideDoubleDataResponse" message="tns:IComplexCalculator_DivideDoubleData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IComplexCalculator/DivideDoubleDataDivideByZeroExceptionFault" name="DivideByZeroExceptionFault" message="tns:IComplexCalculator_DivideDoubleData_DivideByZeroExceptionFault_FaultMessage" />
     </wsdl:operation>
     <wsdl:operation name="MultiplyComplexData">
       <wsdl:input wsaw:Action="http://tempuri.org/IComplexCalculator/MultiplyComplexData" message="tns:IComplexCalculator_MultiplyComplexData_InputMessage" />
@@ -135,6 +143,9 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="DivideByZeroExceptionFault">
+        <soap:fault use="literal" name="DivideByZeroExceptionFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="DivideDoubleData">
       <soap:operation soapAction="http://tempuri.org/IComplexCalculator/DivideDoubleData" style="document" />
@@ -144,6 +155,9 @@
       <wsdl:output>
         <soap:body use="literal" />
       </wsdl:output>
+      <wsdl:fault name="DivideByZeroExceptionFault">
+        <soap:fault use="literal" name="DivideByZeroExceptionFault" namespace="" />
+      </wsdl:fault>
     </wsdl:operation>
     <wsdl:operation name="MultiplyComplexData">
       <soap:operation soapAction="http://tempuri.org/IComplexCalculator/MultiplyComplexData" style="document" />

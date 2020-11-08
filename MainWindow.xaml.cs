@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -195,9 +196,13 @@ namespace Lab2WpfClient
                     }
                     TbResult.Text = ComplexToString(complex);
                 }
-                catch (System.ServiceModel.EndpointNotFoundException)
+                catch (System.ServiceModel.EndpointNotFoundException ex )
                 {
-                    MessageBox.Show("Serwis jest obecnie niedostępny");
+                    MessageBox.Show("Serwis jest obecnie niedostępny","", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                catch (FaultException<ServiceReference1.DivideByZeroException> ex)
+                {
+                    MessageBox.Show(ex.Detail.Details + "\n" + "Dividient: " + ComplexToString(ex.Detail.Divident),ex.Detail.Message,MessageBoxButton.OK,MessageBoxImage.Error);
                 }
             }
         }

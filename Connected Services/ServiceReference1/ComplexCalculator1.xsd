@@ -7,4 +7,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Complex" nillable="true" type="tns:Complex" />
+  <xs:complexType name="DivideByZeroException">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Details" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Divident" nillable="true" type="tns:Complex" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DivideByZeroException" nillable="true" type="tns:DivideByZeroException" />
 </xs:schema>

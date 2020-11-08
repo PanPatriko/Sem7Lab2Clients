@@ -74,6 +74,83 @@ namespace Lab2WpfClient.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DivideByZeroException", Namespace="http://schemas.datacontract.org/2004/07/Lab1Wcf")]
+    [System.SerializableAttribute()]
+    public partial class DivideByZeroException : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DetailsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Lab2WpfClient.ServiceReference1.Complex DividentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Details {
+            get {
+                return this.DetailsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DetailsField, value) != true)) {
+                    this.DetailsField = value;
+                    this.RaisePropertyChanged("Details");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Lab2WpfClient.ServiceReference1.Complex Divident {
+            get {
+                return this.DividentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DividentField, value) != true)) {
+                    this.DividentField = value;
+                    this.RaisePropertyChanged("Divident");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IComplexCalculator")]
     public interface IComplexCalculator {
@@ -103,12 +180,15 @@ namespace Lab2WpfClient.ServiceReference1 {
         System.Threading.Tasks.Task<Lab2WpfClient.ServiceReference1.Complex> SubstractDoubleDataAsync(double ar, double ai, double br, double bi);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComplexCalculator/DivideComplexData", ReplyAction="http://tempuri.org/IComplexCalculator/DivideComplexDataResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Lab2WpfClient.ServiceReference1.DivideByZeroException), Action="http://tempuri.org/IComplexCalculator/DivideComplexDataDivideByZeroExceptionFault" +
+            "", Name="DivideByZeroException", Namespace="http://schemas.datacontract.org/2004/07/Lab1Wcf")]
         Lab2WpfClient.ServiceReference1.Complex DivideComplexData(Lab2WpfClient.ServiceReference1.Complex a, Lab2WpfClient.ServiceReference1.Complex b);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComplexCalculator/DivideComplexData", ReplyAction="http://tempuri.org/IComplexCalculator/DivideComplexDataResponse")]
         System.Threading.Tasks.Task<Lab2WpfClient.ServiceReference1.Complex> DivideComplexDataAsync(Lab2WpfClient.ServiceReference1.Complex a, Lab2WpfClient.ServiceReference1.Complex b);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComplexCalculator/DivideDoubleData", ReplyAction="http://tempuri.org/IComplexCalculator/DivideDoubleDataResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(Lab2WpfClient.ServiceReference1.DivideByZeroException), Action="http://tempuri.org/IComplexCalculator/DivideDoubleDataDivideByZeroExceptionFault", Name="DivideByZeroException", Namespace="http://schemas.datacontract.org/2004/07/Lab1Wcf")]
         Lab2WpfClient.ServiceReference1.Complex DivideDoubleData(double ar, double ai, double br, double bi);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IComplexCalculator/DivideDoubleData", ReplyAction="http://tempuri.org/IComplexCalculator/DivideDoubleDataResponse")]
