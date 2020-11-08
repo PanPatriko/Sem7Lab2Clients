@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
+using System.ServiceModel.Configuration;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -26,7 +27,7 @@ namespace Lab2WpfClient
         public MainWindow()
         {
             InitializeComponent();
-            Calculator = new ComplexCalculatorClient();
+            Calculator = new ComplexCalculatorClient("wsHttpBindingEndpoint");
         }
 
         ComplexCalculatorClient Calculator;
@@ -73,6 +74,10 @@ namespace Lab2WpfClient
                 {
                     MessageBox.Show("Serwis jest obecnie niedostępny");
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }       
         }
 
@@ -116,6 +121,10 @@ namespace Lab2WpfClient
                 {
                     MessageBox.Show("Serwis jest obecnie niedostępny");
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
         private async void BSub_Click(object sender, RoutedEventArgs e)
@@ -157,6 +166,10 @@ namespace Lab2WpfClient
                 catch (System.ServiceModel.EndpointNotFoundException)
                 {
                     MessageBox.Show("Serwis jest obecnie niedostępny");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
@@ -204,6 +217,10 @@ namespace Lab2WpfClient
                 {
                     MessageBox.Show(ex.Detail.Details + "\n" + "Dividient: " + ComplexToString(ex.Detail.Divident),ex.Detail.Message,MessageBoxButton.OK,MessageBoxImage.Error);
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
         private void BCls_Click(object sender, RoutedEventArgs e)
@@ -214,6 +231,13 @@ namespace Lab2WpfClient
             TbI2.Text = "";
             TbResult.Text = "";
         }
+
+        private void RadioButton_Click(object sender, RoutedEventArgs e)
+        {
+            string endpoint = (sender as RadioButton).Content.ToString();
+            Calculator = new ComplexCalculatorClient(endpoint);
+        }
+
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
             var textBox = sender as TextBox;
