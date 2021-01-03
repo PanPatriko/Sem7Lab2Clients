@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
 using System.ServiceModel.Configuration;
+using System.ServiceModel.Security;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -28,6 +29,9 @@ namespace Lab2WpfClient
         {
             InitializeComponent();
             Calculator = new ComplexCalculatorClient("wsHttpBindingEndpoint");
+            Calculator.ClientCredentials.UserName.UserName = UsernameTextBox.Text;
+            Calculator.ClientCredentials.UserName.Password = PasswordBox.Password;
+            Calculator.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.None;
         }
 
         ComplexCalculatorClient Calculator;
@@ -77,6 +81,10 @@ namespace Lab2WpfClient
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                    if (ex.InnerException != null)
+                    {
+                        MessageBox.Show(ex.InnerException.Message);
+                    }
                 }
             }       
         }
@@ -124,6 +132,10 @@ namespace Lab2WpfClient
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                    if (ex.InnerException != null)
+                    {
+                        MessageBox.Show(ex.InnerException.Message);
+                    }
                 }
             }
         }
@@ -170,6 +182,10 @@ namespace Lab2WpfClient
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                    if (ex.InnerException != null)
+                    {
+                        MessageBox.Show(ex.InnerException.Message);
+                    }
                 }
             }
         }
@@ -220,6 +236,10 @@ namespace Lab2WpfClient
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+                    if (ex.InnerException != null)
+                    {
+                        MessageBox.Show(ex.InnerException.Message);
+                    }
                 }
             }
         }
@@ -236,6 +256,12 @@ namespace Lab2WpfClient
         {
             string endpoint = (sender as RadioButton).Content.ToString();
             Calculator = new ComplexCalculatorClient(endpoint);
+            if(endpoint == "wsHttpBindingEndpoint")
+            {
+                Calculator.ClientCredentials.UserName.UserName = UsernameTextBox.Text;
+                Calculator.ClientCredentials.UserName.Password = PasswordBox.Password;
+                Calculator.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.None;
+            }
         }
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
